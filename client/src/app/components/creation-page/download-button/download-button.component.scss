@@ -1,0 +1,88 @@
+#download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: solid var(--black);
+    border-width: 3px 5px 5px 3px;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    background-color: var(--yellow);
+}
+
+#download-btn > img {
+    height: 25px;
+    width: 25px;
+}
+
+#download-btn:hover {
+    border: solid black;
+    border-width: 2px 7px 7px 2px;
+}
+
+#download-btn:active {
+    border: solid black;
+    border-width: 4px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: solid var(--black);
+    border-width: 3px 5px 5px 3px;
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    background-color: var(--yellow);
+}
+
+input[type='file'] {
+    display: none;
+}
+
+/* Tooltip Styling */
+
+.tooltip {
+    position: relative;
+}
+  
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    font-size: small;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 999;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -125px;
+    opacity: 0;
+    transition-delay: 0.5s;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
+  
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,25 @@
+<div id="container">
+    <div class="icon-container" (click)="togglePlay()">
+        <img #playPause class="icon" src="./assets/Images/pause.png" alt="play/pause"/>
+    </div>
+    <div #speedOptions class="sub-container">
+        <p id="speed-text">Vitesse :</p>
+        <div id="speed-1" class="icon-container active" (click)="changePlaybackSpeed(1)">
+            <p>1X</p>
+        </div>
+        <div id="speed-2" class="icon-container" (click)="changePlaybackSpeed(2)">
+            <p>2X</p>
+        </div>
+        <div id="speed-4" class="icon-container" (click)="changePlaybackSpeed(4)">
+            <p>4X</p>
+        </div>
+    </div>
+    <div class="sub-container">
+        <div class="icon-container" (click)="restartReplay()">
+            <img class="icon" src="./assets/Images/reset.png" alt="recommencer"/>
+        </div>
+        <div class="icon-container" (click)="quitReplay()">
+            <img class="icon" src="./assets/Images/exit.png" alt="quitter"/>
+        </div>
+    </div>
+</div>

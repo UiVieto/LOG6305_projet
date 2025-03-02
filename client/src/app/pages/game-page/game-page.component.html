@@ -1,0 +1,11 @@
+<app-background-image></app-background-image>
+<div class="container" id="disable-scrolling">
+    <section class="game-container">
+        <app-game></app-game>
+        <app-game-info *ngIf="!playbackService.isPlaybackActive"></app-game-info>
+        <app-playback-options *ngIf="playbackService.isPlaybackActive"></app-playback-options>
+    </section>
+    <section id="chat">
+        <app-chat></app-chat>
+    </section>
+</div>

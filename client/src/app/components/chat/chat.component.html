@@ -1,0 +1,16 @@
+<div class="container">
+    <div id="scroll">
+        <div id="chatbox" *ngFor="let m of messages">
+            <app-message [message]="m.message" [color]="m.color" [date]="m.date"></app-message>
+        </div>
+    </div>
+    <div *ngIf="gameSocket.gameInstance.players.length > 1 && !playbackService.isPlaybackActive">
+        <hr />
+        <form #input (ngSubmit)="addMessage(message)">
+            <input #userInput type="text" id="message-box" [(ngModel)]="message" name="chatbox" maxlength="200" />
+            <button class="button" type="submit">
+                <img src="./assets/Images/send.png" />
+            </button>
+        </form>
+    </div>
+</div>

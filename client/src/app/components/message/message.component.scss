@@ -1,0 +1,43 @@
+.message {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 0px 15px 5px 15px;
+}
+
+.sent {
+    float: right;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 5px;
+}
+
+.message-header p {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.message-content {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: solid black;
+    border-width: 3px 9px 9px 3px;
+}
+
+.message-content p {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    padding: 10px;
+    white-space: normal;
+    font-size: 15px;
+    margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}

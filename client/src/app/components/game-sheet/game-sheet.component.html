@@ -1,0 +1,33 @@
+<mat-card id="game-sheet" *ngIf="!!sheetInput">
+    <div id="top-section" style="background-color: transparent">
+        <h1 id="sheet-title">{{ sheetInput.title }}</h1>
+        <mat-card-subtitle #sheet_difficulty id="sheet-difficulty">{{
+            'Niveau de difficulté: ' + (sheetInput.isHard ? 'difficile' : 'facile')
+        }}</mat-card-subtitle>
+    </div>
+    <img #img mat-card-image id="sheet-img" alt="image du jeu" [src]="sanitize(sheetInput.image1 | async)" />
+    <mat-card-content>
+        <div class="head">
+            <h1>SOLO</h1>
+        </div>
+        <div class="body">
+            <ol>
+                <li *ngFor="let player of sheetInput.bestTimes.solo; let i = index">
+                    <mark>{{ player.playerName }}</mark>
+                    <small>{{ formatTime(player.time) }}</small>
+                </li>
+            </ol>
+        </div>
+        <div class="head">
+            <h1>VS</h1>
+        </div>
+        <div class="body">
+            <ol>
+                <li *ngFor="let player of sheetInput.bestTimes.versus; let i = index">
+                    <mark>{{ player.playerName }}</mark>
+                    <small>{{ formatTime(player.time) }}</small>
+                </li>
+            </ol>
+        </div>
+    </mat-card-content>
+</mat-card>

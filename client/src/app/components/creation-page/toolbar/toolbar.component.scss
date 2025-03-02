@@ -1,0 +1,186 @@
+#toolbar-container {
+    background-color: var(--purple);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: solid black;
+    border-width: 3px 9px 9px 3px;
+    width: 1490px;
+}
+
+#tools-container {
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 0 10px 10px;
+}
+
+#other-tools-container {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px 0px;
+    gap: 12px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: solid var(--black);
+    border-width: 3px 5px 5px 3px;
+    height: 55px;
+    width: 55px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: var(--yellow);
+}
+
+.icon-container:hover {
+    border-width: 2px 7px 7px 2px;
+}
+
+.icon-container:active {
+    border-width: 2px;
+}
+
+.icon {
+    height: 25px;
+    width: 25px;
+}
+
+.active {
+    background-color: var(--green);
+}
+
+#undo-redo-section {
+    display: flex;
+    gap: 15px;
+}
+
+#enlargement-container {
+    background-color: var(--green);
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid var(--black);
+    border-width: 3px 9px 9px 3px;
+    padding: 0 10px;
+    gap: 10px;
+    height: 36px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#enlargement-container p {
+    text-align: center;
+    margin: 0;
+}
+
+#compare-btn {
+    height: 48px;
+    color: var(--black);
+    background-color: var(--yellow);
+    box-sizing: border-box;
+    border: solid var(--black);
+    border-width: 3px 9px 9px 3px;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#compare-btn:hover {
+    border-width: 2px 10px 10px 2px;
+}
+
+#compare-btn:active {
+    border-width: 6px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.dropdown-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin: 0 10px;
+    z-index: 1;
+    bottom: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--yellow);
+    border: solid black;
+    border-width: 3px 9px 9px 3px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.inner-dropdown > * {
+    width: inherit;
+}
+
+.inner-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 150px;
+}
+
+/* Tooltip Styling */
+
+.tooltip {
+    position: relative;
+}
+  
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    font-size: small;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 999;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition-delay: 0.5s;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
+  
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,13 @@
+<div id="container">
+    <div id="hero">
+        <app-go-back [backRoute]="'/config'"></app-go-back>
+        <app-title [title]="title"></app-title>
+        <div></div>
+    </div>
+    <div id="image-input-container">
+        <app-image-input #canvas1 inputId="original"></app-image-input>
+        <app-vertical-toolbar [toolbarRef]="toolbar"></app-vertical-toolbar>
+        <app-image-input #canvas2 inputId="modified"></app-image-input>
+    </div>
+    <app-toolbar #toolbar></app-toolbar>
+</div>

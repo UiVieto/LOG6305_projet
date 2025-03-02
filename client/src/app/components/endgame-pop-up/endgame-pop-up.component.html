@@ -1,0 +1,10 @@
+<div class="container">
+    <h2 mat-dialog-title>{{ data.prompt }}</h2>
+    <mat-dialog-content>
+        <p>{{ data.details }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button *ngIf="isClassic" mat-dialog-close (click)="startPlayback()">Reprise</button>
+        <button mat-dialog-close (click)=terminateGame()>Terminer</button>
+    </mat-dialog-actions>
+</div>

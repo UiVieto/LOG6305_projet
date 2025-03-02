@@ -1,0 +1,30 @@
+<app-background-image></app-background-image>
+<body>
+    <div id="content-container-left">
+        <div class="rectangle">
+        </div>
+        <div class="triangle">
+            <img id="logo" src="./assets/Images/logo.png" alt="logo" />
+
+        </div>
+        <div class="circle">
+            <h2 class="team-name">Équipe 308</h2>
+            <div>
+                <p>Benjamin Piché</p>
+                <p>Edouard Marsolais</p>
+                <p>Gabriel Sawka</p>
+                <p>Huy Viet Nguyen</p>
+                <p>Matteo Colavita</p>
+                <p>Thomas Thiboutot</p>
+            </div>
+        </div>
+    </div>
+    <div id="content-container-right">
+        <h1>{{ title }}</h1>
+        <div id="buttons">
+            <button id="classic-button" routerLink="/select">Mode Classique</button>
+            <button id="limited-time-button" (click)="openLimitedTimePopup()">Mode Temps Limité</button>
+            <button id="configuration-button" routerLink="/config">Configuration</button>
+        </div>
+    </div>
+</body>

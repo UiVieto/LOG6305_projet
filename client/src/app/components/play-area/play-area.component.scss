@@ -1,0 +1,47 @@
+#play-area-container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    border: solid black;
+    border-width: 3px 9px 9px 3px;
+}
+
+#play-area-container canvas {
+    position: absolute;
+}
+
+#imageLayer {
+    z-index: 1;
+}
+
+#diffLayer {
+    z-index: 2;
+}
+
+#clueLayer {
+    z-index: 3;
+}
+
+#errorLayer {
+    z-index: 4;
+}
+
+@keyframes shakeAnimation {
+    25% {
+        transform: translateX(3px) translateY(3px);
+    }
+    50% {
+        transform: translateX(3px) translateY(-3px);
+    }
+    75% {
+        transform: translateX(-3px) translateY(3px);
+    }
+    100% {
+        transform: translateX(-3px) translateY(-3px);
+    }
+}
+
+.shake {
+    animation: shakeAnimation linear 0s infinite;
+    animation-duration: 0.25s;
+}

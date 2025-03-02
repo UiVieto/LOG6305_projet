@@ -1,0 +1,12 @@
+<div class="container">
+    <h2 mat-dialog-title>Entrez un nom d'utilisateur</h2>
+    <div #actionsContainer id="actions-container">
+        <div>
+            <input #input type="text" [placeholder]="'Nom d\'utilisateur'" (input)="onInput(input)" />
+        </div>
+        <div id="buttons">
+            <button id="solo-btn" [disabled]="username.length <= 1" (click)="onSubmit('Solo')">Solo</button>
+            <button id="coop-btn" [disabled]="username.length <= 1" (click)="onSubmit('Coop')">Coop</button>
+        </div>
+    </div>
+</div>

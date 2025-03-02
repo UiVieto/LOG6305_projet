@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    cursor: default;
+}
+
+app-go-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+    background-color: var(--green);
+}
+
+#image-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}

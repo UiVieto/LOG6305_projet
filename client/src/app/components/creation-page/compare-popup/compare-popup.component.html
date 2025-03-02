@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 mat-dialog-title>Différences détectées</h2>
+    <div #content id="content"></div>
+    <p id="message" *ngIf="this.displayedMessage">{{ displayedMessage }}</p>
+    <p>Le titre ne peut pas contenir les caractères suivants: / \\ : * ? " < > |</p>
+    <div id="actions-container">
+        <div>
+            <span>Titre :</span>
+            <input
+                #input
+                type="text"
+                [placeholder]="difficulty !== 'facile' && difficulty !== 'difficile' ? 'Veuillez d\'abord valider' : 'Nom du jeu'"
+                [disabled]="difficulty !== 'facile' && difficulty !== 'difficile'"
+                (input)="onInput(input, submitButton)"
+                (keyup.enter)="onSubmit()"
+            />
+        </div>
+        <button #submitButton id="submit-btn" (click)="onSubmit()" disabled="true">Soumettre la partie</button>
+    </div>
+</div>

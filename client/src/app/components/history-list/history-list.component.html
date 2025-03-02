@@ -1,0 +1,20 @@
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr id="header">
+            <th>Début</th>
+            <th>Temps</th>
+            <th>Mode</th>
+            <th>Joueur1</th>
+            <th>Joueur2</th>
+        </tr>
+    </thead>
+    <tbody id="content">
+        <tr *ngFor="let gameHistory of currentHistory">
+            <td>{{ formatDate(gameHistory.startDate) }}</td>
+            <td>{{ formatTime(gameHistory.playingTime) }}</td>
+            <td>{{ gameHistory.gameMode }}</td>
+            <td #username1>{{ gameHistory.p1Name }}</td>
+            <td #username2>{{ gameHistory.p2Name }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+.container {
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F81E;
+    box-sizing: border-box;
+    border: solid black;
+    border-width: 3px 9px 9px 3px;
+}
+
+#timer {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+}

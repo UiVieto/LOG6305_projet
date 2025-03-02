@@ -1,0 +1,117 @@
+<app-background-image></app-background-image>
+<body>
+    <header>
+        <app-go-back [backRoute]="'/home'"></app-go-back>
+        <app-title id="title" [title]="title"></app-title>
+    </header>
+    <main>
+        <button
+            mat-raised-button
+            class="navigation-btn"
+            type="button"
+            id="previous"
+            (click)="sheetContainer.previousIndex()"
+            [disabled]="sheetContainer.pageIndex === 0"
+        >
+            <img src="./assets/Images/back.png" />
+        </button>
+        <mat-grid-list cols="4" rowHeight="fit" gutterSize="30px">
+            <mat-grid-tile id="tile" *ngFor="let sheet of sheetContainer.currentGames">
+                <div id="content-container">
+                    <app-game-sheet id="sheet" [sheetInput]="sheet"> </app-game-sheet>
+                    <div id="btn-container" style="background-color: transparent">
+                        <button mat-raised-button type="button" class="btn sheet-btn" id="delete" (click)="sheetContainer.deleteSheet(sheet.title)">
+                            Supprimer
+                        </button>
+                        <button mat-raised-button type="button" class="btn sheet-btn" id="reinit" (click)="resetTime(sheet.title)">
+                            Réinitialiser
+                        </button>
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <button
+            mat-raised-button
+            class="navigation-btn"
+            type="button"
+            id="next"
+            (click)="sheetContainer.nextIndex()"
+            [disabled]="sheetContainer.isLastPage"
+        >
+            <img src="./assets/Images/forward.png" />
+        </button>
+    </main>
+    <div #toolbar id="toolbar-container">
+        <div id="tools-container">
+            <div class="tooltip icon-container" routerLink="/history">
+                <span class="tooltip-text">Historique</span>
+                <img #trashHistory class="icon" id="bin" src="./assets/Images/consult-history.png" draggable="false" />
+            </div>
+
+            <div class="tooltip icon-container" (click)="sheetContainer.deleteHistory()">
+                <span class="tooltip-text">Effacer l'historique</span>
+                <img #trashHistory class="icon" src="./assets/Images/trash.png" draggable="false" />
+            </div>
+            <div id="resetAllTimes" class="tooltip icon-container" (click)="resetAllBestTimes()">
+                <span class="tooltip-text">Réinitialiser tous les temps</span>
+                <img class="icon" src="./assets/Images/timer-reset-all.png" draggable="false" />
+            </div>
+            <div class="tooltip icon-container" routerLink="../creation">
+                <span class="tooltip-text">Créer une nouvelle fiche</span>
+                <img class="icon" src="./assets/Images/create-game.png" draggable="false" />
+            </div>
+            <div class="tooltip icon-container" (click)="sheetContainer.deleteAllSheets()">
+                <span class="tooltip-text">Supprimer toutes les fiches</span>
+                <img class="icon" src="./assets/Images/delete-all-games.png" draggable="false" />
+            </div>
+        </div>
+
+        <form id="setting-form" [formGroup]="settingsForm" (ngSubmit)="updateSettings()">
+            <ul id="settings">
+                <li>
+                    Temps initial du compte à rebours:
+                    <input
+                        formControlName="initialTimeControl"
+                        type="number"
+                        maxlength="3"
+                        name="initial"
+                        [(ngModel)]="initialTime"
+                        required
+                        value="{{ initialTime }}"
+                    />
+                    secondes (min: 30, max: 120)
+                </li>
+                <li>
+                    Temps de pénalité pour l’utilisation d’un indice:
+                    <input
+                        formControlName="penaltyTimeControl"
+                        type="number"
+                        maxlength="2"
+                        name="penalty"
+                        [(ngModel)]="penaltyTime"
+                        required
+                        value="{{ penaltyTime }}"
+                    />
+                    secondes (min: 0, max: 30)
+                </li>
+                <li>
+                    Temps gagné avec la découverte d’une différence:
+                    <input
+                        formControlName="bonusTimeControl"
+                        type="number"
+                        maxlength="2"
+                        name="bonus"
+                        [(ngModel)]="bonusTime"
+                        required
+                        value="{{ bonusTime }}"
+                    />
+                    secondes (min: 0, max: 30)
+                </li>
+            </ul>
+            <div id="settings-btn-container">
+                <button #validate mat-raised-button [disabled]="!settingsForm.valid" class="btn settings-btn" type="submit">Valider</button>
+                <button mat-raised-button type="reset" class="btn settings-btn" (click)="resetSettings()">Réinitialiser</button>
+            </div>
+        </form>
+    </div>
+</body>

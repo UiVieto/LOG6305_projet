@@ -1,0 +1,8 @@
+<app-background-image></app-background-image>
+<body>
+    <header>
+        <app-go-back [backRoute]="'/config'"></app-go-back>
+        <app-title id="title" [title]="title"></app-title>
+    </header>
+    <app-history-list id="history" [currentHistory]="sheetContainer.currentHistory"></app-history-list>
+</body>

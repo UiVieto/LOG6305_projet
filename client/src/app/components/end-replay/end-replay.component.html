@@ -1,0 +1,10 @@
+<div class="container">
+    <h1 mat-dialog-title>La reprise est terminée</h1>
+    <mat-dialog-content>
+        <p>Souhaitez-vous la visionner à nouveau?</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-dialog-close (click)="startPlayback()">Recommencer</button>
+        <button mat-dialog-close (click)="quitPlayback()">Terminer</button>
+    </mat-dialog-actions>
+</div>

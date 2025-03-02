@@ -1,0 +1,29 @@
+<div id="container">
+    <div id="canvas-container">
+        <canvas #canvas1 id="layer-1" width="640px" height="480px"></canvas>
+        <canvas #canvas2 id="layer-2" width="640px" height="480px"></canvas>
+        <canvas #canvas3 id="layer-3" width="640px" height="480px"></canvas>
+    </div>
+    <div id="bottom-container">
+        <div class="tooltip icon-container" (click)="resetOverlay()">
+            <img class="icon" src="./assets/Images/reset.png" draggable="false" />
+            <div class="tooltip-text">Réinitialiser</div>
+        </div>
+        <div id="input-container">
+            <div>
+                <label [htmlFor]="inputId" class="tooltip icon-container">
+                    <img id="file-upload" class="icon" src="./assets/Images/upload.png" draggable="false" />
+                    <div class="tooltip-text-input">
+                        <div>Téléverser</div>
+                        <div>Format requis: .bmp (640 x 480 pixels)</div>
+                    </div>
+                </label>
+                <input #input type="file" accept="image/*" [id]="inputId" (input)="onInput(input, canvas1)" />
+            </div>
+            <div class="tooltip icon-container" (click)="clearImage(canvas1)">
+                <img class="icon" src="./assets/Images/trash.png" draggable="false" />
+                <div class="tooltip-text">Supprimer l'image</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+#go-back {
+    background-color: var(--purple);
+    height: 64px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 20px;
+}
+
+#go-back img {
+    width: 35px;
+    height: auto;
+}
+
+#go-back:hover {
+    transform: scale(1.1);
+}

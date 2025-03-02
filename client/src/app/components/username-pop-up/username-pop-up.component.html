@@ -1,0 +1,9 @@
+<div class="container">
+    <h2 mat-dialog-title>{{ prompt }}</h2>
+    <div #actionsContainer id="actions-container">
+        <input #input type="text" [placeholder]="'Nom d\'utilisateur'" (input)="onInput(input, actionsContainer)" />
+        <div id="submit-btn-container">
+            <button mat-button [disabled]="username.length <= 0" (click)="onSubmit()">{{ data }}</button>
+        </div>
+    </div>
+</div>

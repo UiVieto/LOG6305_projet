@@ -1,0 +1,46 @@
+::ng-deep .container {
+    mat-dialog-container {
+        padding: 0;
+        border-radius: 20px;
+    }
+}
+
+.container {
+    padding: 30px 50px;
+    border: solid var(--black);
+    border-width: 5px 15px 15px 5px;
+    border-radius: 20px;
+    background-color: var(--green);
+}
+
+h2 {
+    font-size: 22.5px;
+    font-weight: 900;
+}
+
+#buttons {
+    display: flex;
+    padding-top: 20px;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+button {
+    background-color: var(--yellow);
+    width: 150px;
+    height: 60px;
+    border: solid black;
+    border-width: 5px 9px 9px 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--black);
+    cursor: pointer;
+}
+
+button:hover {
+    border-width: 3px 9px 9px 3px;
+}
+
+button:active {
+    border-width: 9px;
+}

@@ -1,0 +1,15 @@
+<div #verticalToolbar id="vertical-toolbar-container">
+    <div class="tooltip vertical-icon-container" (click)="duplicate('toLeft')">
+        <span class="tooltip-text">Dupliquer</span>
+        <img class="vertical-icon" id="duplicate-left" src="./assets/Images/copy-left.png" draggable="false" />
+    </div>
+    <div class="tooltip vertical-icon-container" (click)="duplicate('toRight')">
+        <span class="tooltip-text">Dupliquer</span>
+        <img class="vertical-icon" id="duplicate-right" src="./assets/Images/copy-right.png" draggable="false" />
+    </div>
+    <div class="tooltip vertical-icon-container" (click)="swapOverlays()">
+        <span class="tooltip-text">Intervertir</span>
+        <img class="vertical-icon" id="swap" src="./assets/Images/swap.png" draggable="false" />
+    </div>
+    <app-download-button></app-download-button>
+</div>

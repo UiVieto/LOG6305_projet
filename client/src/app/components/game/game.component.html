@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+        <div id="title-timer-row">
+            <h1>{{ gameSocketService.gameInstance.title }}</h1>
+            <app-timer></app-timer>
+        </div>
+        <hr />
+        <div id="more-info">
+            <p>Difficulté : {{ gameSocketService.gameInstance.isHard ? 'Difficile' : 'Facile' }}</p>
+            <p>Mode : {{ gameSocketService.gameInstance.gameMode }}</p>
+            <p>Différences : {{ gameSocketService.gameInstance.nbDiff }}</p>
+        </div>
+    </div>
+    <div class="images">
+        <app-play-area #leftImage [imageSrc]="gameSocketService.image1"></app-play-area>
+        <app-play-area #rightImage [imageSrc]="gameSocketService.image2"></app-play-area>
+    </div>
+    <div id="progress">
+        <div [ngSwitch]="gameSocketService.gameInstance.gameMode">
+            <div *ngSwitchCase="'Classique'">
+                <div *ngFor="let player of gameSocketService.gameInstance.players">
+                    <app-difference-counter [playerName]="player"></app-difference-counter>
+                </div>
+            </div>
+            <div *ngSwitchCase="'Temps Limité'">
+                <app-progress-counter></app-progress-counter>
+            </div>
+        </div>
+        <div *ngIf="gameSocketService.gameInstance.players.length === 1 && gameFeedbackService.nbClues > 0" id="clues">
+            <p>Indices (pénalité: {{ gameSocketService.gameInstance.hintPenalty }}s):</p>
+            <button #clues [disabled]="playbackService.isPlaybackActive" (click)="onClue()">
+                <img
+                    class="clue"
+                    *ngFor="let clue of [].constructor(gameFeedbackService.nbClues)"
+                    src="https://cdn-icons-png.flaticon.com/512/49/49116.png"
+                />
+            </button>
+        </div>
+    </div>
+</div>

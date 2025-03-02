@@ -1,0 +1,10 @@
+<div id="container">
+    <label class="tooltip" id="download-btn" for="image-input-1">
+        <img id="download-icon" src="./assets/Images/upload.png" draggable="false" />
+        <div class="tooltip-text">
+            <div>Téléverser des deux côtés</div>
+            <div>Format requis: .bmp (640 x 480 pixels)</div>
+        </div>
+    </label>
+    <input #canvasInput (input)="onInput(canvasInput)" type="file" id="image-input-1" accept="image/*" />
+</div>

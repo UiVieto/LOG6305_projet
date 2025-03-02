@@ -1,0 +1,106 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: #9777f7;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: solid black;
+    border-width: 5px 15px 15px 5px;
+}
+
+#title-timer-row {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+app-timer {
+    height: 100%;
+    width: 200px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0;
+}
+
+hr {
+    height: 5px;
+    margin: 0;
+    border: none;
+    color: black;
+    background-color: black;
+}
+
+#more-info {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    padding: 15px 25px;
+}
+
+#more-info p {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.images {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.counter-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px 15px 15px;
+}
+
+#progress {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+#clues {
+    display: flex;
+    align-items: center;
+}
+
+#clues button {
+    width: 160px;
+    height: 60px;
+    background-color: var(--yellow);
+    border: solid black;
+    border-width: 3px 9px 9px 3px;
+    cursor: pointer;
+}
+
+#clues button:hover {
+    border-width: 2px 10px 10px 2px;
+}
+
+#clues button:active {
+    border-width: 6px;
+}
+
+#clues p {
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+#clues img {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}

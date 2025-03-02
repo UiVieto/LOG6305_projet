@@ -1,0 +1,7 @@
+<div class="container">
+    <h2 mat-dialog-title>{{ data.username }} souhaite défier pour le jeu {{ data.gameTitle }}!</h2>
+    <div #actionsContainer id="buttons">
+        <button mat-button id="submit-btn" mat-dialog-close (click)="refuse()">Refuser</button>
+        <button mat-button id="submit-btn" mat-dialog-close (click)="accept()">Accepter</button>
+    </div>
+</div>

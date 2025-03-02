@@ -1,0 +1,62 @@
+<div #toolbar id="toolbar-container">
+    <div id="tools-container">
+        <div class="tooltip icon-container" (click)="toggleTool('pencil')">
+            <span class="tooltip-text">Crayon</span>
+            <img class="icon" id="pencil" src="./assets/Images/pencil.png" draggable="false" />
+        </div>
+        <div class="dropdown">
+            <img class="dropdown-icon" src="./assets/Images/dropdown.png" draggable="false" />
+            <div class="dropdown-content">
+                <div class="inner-dropdown">
+                    <div>Épaisseur :</div>
+                    <input type="range" min="0" max="100" value="10" (change)="changePencilWidth($event)" />
+                    <div>Couleur :</div>
+                    <input type="color" value="#000000" (change)="changePencilColor($event)" />
+                </div>
+            </div>
+        </div>
+        <div class="tooltip icon-container" (click)="toggleTool('rectangle')">
+            <span class="tooltip-text">Rectangle</span>
+            <img class="icon" id="rectangle" src="./assets/Images/rectangle.png" draggable="false" />
+        </div>
+        <div class="dropdown">
+            <img class="dropdown-icon" src="./assets/Images/dropdown.png" draggable="false" />
+            <div class="dropdown-content">
+                <div class="inner-dropdown">
+                    <div>Couleur :</div>
+                    <input type="color" value="#000000" (change)="changeRectangleColor($event)" />
+                </div>
+            </div>
+        </div>
+        <div class="tooltip icon-container" (click)="toggleTool('eraser')">
+            <span class="tooltip-text">Efface</span>
+            <img class="icon" id="eraser" src="./assets/Images/eraser.png" draggable="false" />
+        </div>
+        <div class="dropdown">
+            <img class="dropdown-icon" src="./assets/Images/dropdown.png" draggable="false" />
+            <div class="dropdown-content">
+                <div class="inner-dropdown">
+                    <div>Épaisseur :</div>
+                    <input type="range" min="0" max="100" value="10" (change)="changeEraserWidth($event)" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="other-tools-container">
+        <div id="undo-redo-section">
+            <div class="tooltip icon-container" (click)="undoAction()">
+                <span class="tooltip-text">Annuler</span>
+                <img class="icon" id="undo" src="./assets/Images/undo.png" draggable="false" />
+            </div>
+            <div class="tooltip icon-container" (click)="redoAction()">
+                <span class="tooltip-text">Refaire</span>
+                <img class="icon" id="redo" src="./assets/Images/redo.png" draggable="false" />
+            </div>
+        </div>
+        <div id="enlargement-container">
+            <p>Élargissement : {{ precision }}</p>
+            <app-custom-slider (newValueEvent)="onPrecisionChange($event)"></app-custom-slider>
+        </div>
+        <button id="compare-btn" (click)="compare()">Comparer les images</button>
+    </div>
+</div>

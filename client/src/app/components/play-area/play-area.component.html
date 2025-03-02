@@ -1,0 +1,6 @@
+<div id="play-area-container">
+    <canvas id="imageLayer" #imageLayer [width]="width" [height]="height"></canvas>
+    <canvas id="diffLayer" #diffLayer [width]="width" [height]="height"></canvas>
+    <canvas id="clueLayer" #clueLayer [width]="width" [height]="height"></canvas>
+    <canvas id="errorLayer" #errorLayer [width]="width" [height]="height" (click)="mouseHitDetect($event)"></canvas>
+</div>

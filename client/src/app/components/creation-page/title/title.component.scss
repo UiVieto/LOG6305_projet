@@ -1,0 +1,20 @@
+#title-container {
+    background-color: var(--purple);
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    height: 90px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 2px solid black;
+    border-width: 3px 9px 9px 3px;
+}
+    
+#title {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin: 0;
+}
