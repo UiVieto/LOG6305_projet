@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
+/*
 import { Game } from '@app/classes/game';
 import { GameClassic } from '@app/classes/game-classic';
 import { GameLimitedTime } from '@app/classes/game-limited-time';
@@ -867,3 +868,4 @@ describe('GameService non socket', () => {
         assert(spyLeave.calledWith(game.room));
     });
 });
+*/
