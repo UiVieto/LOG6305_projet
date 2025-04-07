@@ -25,5 +25,5 @@ export enum DatabaseConstants {
     Database = 'projet',
     GameCollection = 'games',
     GameHistory = 'gameHistory',
-    DatabaseUrl = "mongodb+srv://hv:gadl-6dbz@cluster0.5m5e9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    DatabaseUrl = 'mongodb+srv://proj:log6305@cluster0.lkolbs2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
 }
