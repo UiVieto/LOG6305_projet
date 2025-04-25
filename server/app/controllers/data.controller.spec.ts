@@ -14,7 +14,7 @@ describe('DataController', () => {
     let dataService: SinonStubbedInstance<DataService>;
     let expressApp: Express.Application;
 
-    beforeEach(async () => {
+    beforeEach(() => {
         dataService = createStubInstance(DataService);
         // Access to private static instance for giving a stubbed instance
         DataService['instance'] = dataService;
