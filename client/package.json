@@ -11,7 +11,7 @@
         "coverage": "ng test --code-coverage --source-map=true",
         "lint": "ng lint --format stylish",
         "lint:fix": "npm run lint -- --fix",
-        "fuzz": "tsc fuzzing/communication.service.ts"
+        "fuzz": "ng run client:fuzz"
     },
     "private": true,
     "dependencies": {
@@ -30,7 +30,7 @@
         "smooth-scrollbar": "^8.8.1",
         "socket.io": "^4.6.1",
         "socket.io-client": "4.5.1",
-        "zone.js": "0.11.7"
+        "zone.js": "^0.11.7"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^14.2.10",
@@ -46,6 +46,7 @@
         "@stryker-mutator/typescript-checker": "^8.7.1",
         "@types/jasmine": "~3.8.0",
         "@types/node": "18.6.3",
+        "@types/ws": "^8.5.4",
         "@typescript-eslint/eslint-plugin": "5.32.0",
         "@typescript-eslint/parser": "5.32.0",
         "ag-grid-angular": "^29.2.0",

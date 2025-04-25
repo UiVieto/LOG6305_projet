@@ -5,12 +5,12 @@
     "private": true,
     "scripts": {
         "start": "nodemon",
-        "fuzz": "fast-fuzz -i .",
         "build": "rimraf out && tsc --project tsconfig.app.json",
         "format": "prettier --config ../.prettierrc.yaml --write \"app/**/*\"",
         "lint": "eslint -c .eslintrc.json \"./app/**/*.ts\" --format stylish",
         "test": "cross-env TS_NODE_PROJECT='./tsconfig.spec.json' mocha --config=.mocharc.json --node-env=test",
-        "coverage": "cross-env TS_NODE_PROJECT='./tsconfig.spec.json' nyc mocha --config=.mocharc.json --node-env=test --exit"
+        "coverage": "cross-env TS_NODE_PROJECT='./tsconfig.spec.json' nyc mocha --config=.mocharc.json --node-env=test --exit",
+        "fuzz": "cross-env TS_NODE_PROJECT='./tsconfig.spec.json' mocha --config=.mocharc.fuzz.json --node-env=test"
     },
     "nyc": {
         "check-coverage": true,
