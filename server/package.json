@@ -96,7 +96,7 @@
         "eslint-plugin-prefer-arrow": "1.2.3",
         "eslint-plugin-prettier": "5.2.3",
         "eslint-plugin-unicorn": "54.0.0",
-        "fast-fuzz": "^5.1.6",
+        "fuzzing": "^0.12.21",
         "mocha": "^11.1.0",
         "nodemon": "^3.1.9",
         "nyc": "17.1.0",
